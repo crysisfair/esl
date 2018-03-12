@@ -8,6 +8,8 @@
 
 class utils {
 
+public:
+    utils();
 };
 
 

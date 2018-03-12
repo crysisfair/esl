@@ -12,7 +12,7 @@ class delay: public sc_module {
 
 public:
     sc_in<T> in;
-    sc_in<bool> en;
+    //sc_in<bool> en;
     sc_out<T> out;
     sc_time tdelay;
 
@@ -37,9 +37,9 @@ protected:
     //void mi();
     //void mo();
     void mi() {
-        if(en.read()) {
+        //if(en.read()) {
             latch = in.read();
-        }
+        //}
         vq.push(latch);
         eq.notify(tdelay);
     }
