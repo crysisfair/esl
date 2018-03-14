@@ -1,8 +1,0 @@
-macro(declare_test testname)
-    add_executable(${testname} "${testname}.cpp")
-    include_directories(${CMAKE_CURRENT_SOURCE_DIR} ${CMAKE_CURRENT_BINARY_DIR} ${esl_SOURCE_DIR})
-    target_link_libraries(${testname} systemc)
-    add_test(${testname} ${testname})
-endmacro(declare_test testname)
-#declare_test(test_delay)
-declare_test(test_ctrl)
