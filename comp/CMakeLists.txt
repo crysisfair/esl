@@ -1,0 +1,5 @@
+include_directories($ENV{SYSTEMC}/include ${PROJECT_SOURCE_DIR}/comp)
+aux_source_directory(. DIR_COM_SRC)
+set(COMP_SOURCE_FILE ctrl.cpp dec_proc.cpp top.cpp)
+add_library(comp ${COMP_SOURCE_FILE})
+target_link_libraries(comp systemc)
