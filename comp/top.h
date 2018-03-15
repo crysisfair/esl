@@ -20,9 +20,11 @@ SC_MODULE(top) {
 
     SC_CTOR(top) {
         sc_clock clk("clk", 1.0, SC_NS);
+        p = new dec_proc("dec_proc");
         p->clk(clk);
         p->node_dec_start(node_dec_start);
         p->list_update_done(list_update_done);
+        c = new ctrl("ctrl");
         c->clk(clk);
         c->pkt_dec_start(pkt_dec_start);
         c->pkt_cur_index(cur_index);
